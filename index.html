@@ -428,7 +428,7 @@
         return;
       }
       try{
-        setStatus("جارٍ إرسال البيانات إلى Google Sheets...");
+        setStatus("جارٍ إرسال البيانات إلى...");
         const res = await fetch(url, {
           method: "POST",
           headers: {"Content-Type": "text/plain;charset=utf-8"},
@@ -436,7 +436,7 @@
         });
         const text = await res.text();
         if (!res.ok) throw new Error(text || "HTTP " + res.status);
-        setStatus("تم إرسال البيانات إلى Google Sheets بنجاح.");
+        setStatus("تم إرسال البيانات بنجاح.");
       }catch(err){
         setStatus("فشل الإرسال: " + err.message, false);
       }
